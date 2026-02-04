@@ -1,0 +1,73 @@
+{/* Introduction.mdx */}
+
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# SemeIA Design System
+
+Bem-vindo ao Design System da **SemeIA Educação** - um conjunto completo de componentes, tokens e padrões para construir experiências educacionais consistentes e acessíveis.
+
+## 🎨 Design Tokens
+
+Nosso sistema é construído sobre tokens de design que garantem consistência visual em toda a plataforma:
+
+### Cores da Marca
+
+| Token | Uso |
+|-------|-----|
+| **Primary (Azul)** | Conhecimento, confiança, CTAs principais |
+| **Secondary (Verde)** | Crescimento, progresso, sucesso |
+| **Accent (Laranja)** | Energia, atenção, gamificação |
+
+### Cores Educacionais
+
+- **Níveis de Dificuldade**: Iniciante (verde), Intermediário (laranja), Avançado (vermelho)
+- **Tipos de Conteúdo**: Vídeo, Leitura, Exercício, Quiz, Projeto
+- **Gamificação**: XP (dourado), Conquistas (roxo), Streak (laranja)
+
+## 🧩 Componentes
+
+### Átomos
+- Button, Badge, Input, Label, Checkbox, Switch, Avatar
+
+### Moléculas
+- Card, Alert, Dialog, Dropdown, Tabs, Tooltip
+
+### Organismos
+- CourseCard, LessonList, ProgressTracker, AchievementBadge
+
+## 🚀 Início Rápido
+
+```tsx
+import { Button, Badge, Card } from "@/components/ui";
+
+function MyCourseCard() {
+  return (
+    <Card interactive>
+      <Badge variant="beginner">Iniciante</Badge>
+      <h3>Introdução ao React</h3>
+      <Button>Começar</Button>
+    </Card>
+  );
+}
+```
+
+## 📚 Recursos
+
+- [Tokens de Design](/docs/tokens-colors--docs)
+- [Componentes UI](/docs/ui-button--docs)
+- [Componentes Educacionais](/docs/educational-course-card--docs)
+- [Padrões de Acessibilidade](/docs/accessibility--docs)
+
+## 🎯 Princípios de Design
+
+1. **Clareza**: Interface intuitiva para todos os níveis de usuário
+2. **Consistência**: Padrões visuais unificados em toda a plataforma
+3. **Acessibilidade**: WCAG 2.1 AA compliance
+4. **Motivação**: Elementos de gamificação para engajamento
+5. **Responsividade**: Experiência otimizada em todos os dispositivos
+
+---
+
+*SemeIA Design System v0.1.0*

@@ -1,0 +1,180 @@
+{/* Colors.mdx */}
+
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="Design Tokens/Colors" />
+
+# Paleta de Cores - SemeIA
+
+Nossa paleta de cores foi cuidadosamente projetada para contextos educacionais, promovendo foco, engajamento e motivação.
+
+## Cores da Marca
+
+<ColorPalette>
+  <ColorItem
+    title="Primary - Azul Conhecimento"
+    subtitle="--primary-500"
+    colors={{
+      50: '#E8F4FD',
+      100: '#C5E4FA',
+      200: '#9ED0F5',
+      300: '#77BCF0',
+      400: '#50A8EB',
+      500: '#2196F3',
+      600: '#1976D2',
+      700: '#1565C0',
+      800: '#0D47A1',
+      900: '#0A3A8A',
+    }}
+  />
+  <ColorItem
+    title="Secondary - Verde Crescimento"
+    subtitle="--secondary-500"
+    colors={{
+      50: '#E8F5E9',
+      100: '#C8E6C9',
+      200: '#A5D6A7',
+      300: '#81C784',
+      400: '#66BB6A',
+      500: '#4CAF50',
+      600: '#43A047',
+      700: '#388E3C',
+      800: '#2E7D32',
+      900: '#1B5E20',
+    }}
+  />
+  <ColorItem
+    title="Accent - Laranja Energia"
+    subtitle="--accent-500"
+    colors={{
+      50: '#FFF3E0',
+      100: '#FFE0B2',
+      200: '#FFCC80',
+      300: '#FFB74D',
+      400: '#FFA726',
+      500: '#FF9800',
+      600: '#FB8C00',
+      700: '#F57C00',
+      800: '#EF6C00',
+      900: '#E65100',
+    }}
+  />
+</ColorPalette>
+
+## Cores Semânticas
+
+<ColorPalette>
+  <ColorItem
+    title="Success"
+    subtitle="Sucesso, progresso, conclusão"
+    colors={{
+      light: '#E8F5E9',
+      main: '#4CAF50',
+      dark: '#2E7D32',
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="Atenção, cuidado"
+    colors={{
+      light: '#FFF8E1',
+      main: '#FFC107',
+      dark: '#F57F17',
+    }}
+  />
+  <ColorItem
+    title="Error/Destructive"
+    subtitle="Erro, perigo, exclusão"
+    colors={{
+      light: '#FFEBEE',
+      main: '#F44336',
+      dark: '#C62828',
+    }}
+  />
+  <ColorItem
+    title="Info"
+    subtitle="Informação, ajuda"
+    colors={{
+      light: '#E3F2FD',
+      main: '#2196F3',
+      dark: '#1565C0',
+    }}
+  />
+</ColorPalette>
+
+## Cores Educacionais
+
+### Níveis de Dificuldade
+
+<ColorPalette>
+  <ColorItem
+    title="Iniciante"
+    subtitle="Conteúdo básico"
+    colors={{ beginner: '#81C784' }}
+  />
+  <ColorItem
+    title="Intermediário"
+    subtitle="Conteúdo moderado"
+    colors={{ intermediate: '#FFB74D' }}
+  />
+  <ColorItem
+    title="Avançado"
+    subtitle="Conteúdo complexo"
+    colors={{ advanced: '#EF5350' }}
+  />
+</ColorPalette>
+
+### Tipos de Conteúdo
+
+<ColorPalette>
+  <ColorItem
+    title="Vídeo"
+    colors={{ video: '#F44336' }}
+  />
+  <ColorItem
+    title="Leitura"
+    colors={{ reading: '#2196F3' }}
+  />
+  <ColorItem
+    title="Exercício"
+    colors={{ exercise: '#FF9800' }}
+  />
+  <ColorItem
+    title="Quiz"
+    colors={{ quiz: '#9C27B0' }}
+  />
+  <ColorItem
+    title="Projeto"
+    colors={{ project: '#4CAF50' }}
+  />
+</ColorPalette>
+
+### Gamificação
+
+<ColorPalette>
+  <ColorItem
+    title="XP - Experiência"
+    colors={{ xp: '#FFD700' }}
+  />
+  <ColorItem
+    title="Conquistas"
+    colors={{ badge: '#9C27B0' }}
+  />
+  <ColorItem
+    title="Streak"
+    colors={{ streak: '#FF5722' }}
+  />
+</ColorPalette>
+
+## Uso no Código
+
+```tsx
+// Usando classes Tailwind
+<div className="bg-primary text-primary-foreground">Primary</div>
+<div className="bg-success text-success-foreground">Success</div>
+
+// Badges educacionais
+<Badge variant="beginner">Iniciante</Badge>
+<Badge variant="video">Vídeo</Badge>
+<Badge variant="xp">+50 XP</Badge>
+```
