@@ -1,22 +1,73 @@
 # SemeIA Design System
 
-Sistema de design completo para a plataforma educacional **SemeIA Educação**.
+Sistema de design oficial para a plataforma educacional **SemeIA Educação**.
 
 ## 🎯 Visão Geral
 
 O SemeIA Design System é uma biblioteca de componentes React construída com:
 
-- **Next.js 14** - App Router com Server Components
+- **React 18** - Componentes modernos com hooks
 - **Tailwind CSS** - Estilização utility-first
 - **Shadcn/ui** - Componentes acessíveis baseados em Radix UI
-- **Storybook 8** - Documentação visual de componentes
 - **TypeScript** - Tipagem estática completa
 
-## 🚀 Início Rápido
+## 📦 Instalação em Outros Projetos
 
-### Instalação
+### Via GitHub
 
 ```bash
+# Instalar diretamente do GitHub
+npm install github:KristofferKlie/semeia-design-system
+
+# Ou com yarn
+yarn add github:KristofferKlie/semeia-design-system
+```
+
+### Configuração no Projeto
+
+1. **Importar os estilos globais** no seu `app/layout.tsx` ou `_app.tsx`:
+
+```tsx
+import "@semeia/design-system/styles";
+```
+
+2. **Estender o Tailwind config** no seu `tailwind.config.ts`:
+
+```ts
+import semeiaConfig from "@semeia/design-system/tailwind.config";
+
+export default {
+  ...semeiaConfig,
+  content: [
+    ...semeiaConfig.content,
+    "./node_modules/@semeia/design-system/src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+};
+```
+
+3. **Usar os componentes**:
+
+```tsx
+import { Button, Badge, Card } from "@semeia/design-system";
+
+function MyComponent() {
+  return (
+    <Card>
+      <Button variant="success">Concluir</Button>
+      <Badge variant="xp">+100 XP</Badge>
+    </Card>
+  );
+}
+```
+
+## 🚀 Desenvolvimento Local
+
+```bash
+# Clonar o repositório
+git clone https://github.com/KristofferKlie/semeia-design-system.git
+cd semeia-design-system
+
 # Instalar dependências
 npm install
 
@@ -57,17 +108,23 @@ src/
 
 ## 🎨 Design Tokens
 
-### Cores da Marca
+### Cores da Marca SemeIA
 
-| Token | Cor | Uso |
-|-------|-----|-----|
-| **Primary** | Azul (#2196F3) | Conhecimento, confiança, CTAs |
-| **Secondary** | Verde (#4CAF50) | Crescimento, progresso |
-| **Accent** | Laranja (#FF9800) | Energia, atenção |
+| Token | Cor | HSL | Uso |
+|-------|-----|-----|-----|
+| **Primary** | Verde Folha | `#3D8B40` (122 37% 40%) | CTAs, botões principais, ações |
+| **Secondary** | Azul Petróleo | `#1E3D4F` (201 45% 21%) | Títulos, texto principal |
+| **Accent** | Laranja IA | `#E8941A` (36 84% 51%) | Destaques, alertas, conexões |
+
+### Temas
+
+- **Light Mode**: Fundo bege suave `#F5F3EE`, cards brancos
+- **Dark Mode**: Fundo escuro `#0A0A0A`, azul como cor primária
 
 ### Cores Educacionais
 
-- **Níveis**: Iniciante (verde), Intermediário (laranja), Avançado (vermelho)
+- **Disciplinas**: Geral, Linguagens, Matemática, Humanas, Natureza, Infantil
+- **Status**: Gerado, Editado, Planejado, Aplicado, Cancelado
 - **Conteúdo**: Vídeo, Leitura, Exercício, Quiz, Projeto
 - **Gamificação**: XP (dourado), Conquistas (roxo), Streak (laranja)
 
