@@ -572,7 +572,7 @@ export default function DesignSystemShowcase() {
               <Info className="h-4 w-4" />
               <AlertTitle>Dica</AlertTitle>
               <AlertDescription>
-                Complete 5 aulas seguidas para ganhar o badge "Dedicação".
+                Complete 5 aulas seguidas para ganhar o badge &ldquo;Dedicação&rdquo;.
               </AlertDescription>
             </Alert>
           </div>

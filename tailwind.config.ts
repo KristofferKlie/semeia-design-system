@@ -144,13 +144,66 @@ const config: Config = {
           badge: "hsl(var(--badge-color))",
           streak: "hsl(var(--streak-color))",
         },
+
+        /* Neutral Scale - Cinzas alinhados com produção */
+        neutral: {
+          50: "hsl(var(--neutral-50))",
+          100: "hsl(var(--neutral-100))",
+          200: "hsl(var(--neutral-200))",
+          300: "hsl(var(--neutral-300))",
+          400: "hsl(var(--neutral-400))",
+          500: "hsl(var(--neutral-500))",
+          600: "hsl(var(--neutral-600))",
+          700: "hsl(var(--neutral-700))",
+          800: "hsl(var(--neutral-800))",
+          900: "hsl(var(--neutral-900))",
+        },
+
+        /* Agent Colors - Agentes IA SemeIA */
+        agent: {
+          leonardo: {
+            DEFAULT: "hsl(var(--agent-leonardo))",
+            bg: "hsl(var(--agent-leonardo-bg))",
+          },
+          mafalda: {
+            DEFAULT: "hsl(var(--agent-mafalda))",
+            bg: "hsl(var(--agent-mafalda-bg))",
+          },
+          mario: {
+            DEFAULT: "hsl(var(--agent-mario))",
+            bg: "hsl(var(--agent-mario-bg))",
+          },
+          martha: {
+            DEFAULT: "hsl(var(--agent-martha))",
+            bg: "hsl(var(--agent-martha-bg))",
+          },
+          bento: {
+            DEFAULT: "hsl(var(--agent-bento))",
+            bg: "hsl(var(--agent-bento-bg))",
+          },
+          nina: {
+            DEFAULT: "hsl(var(--agent-nina))",
+            bg: "hsl(var(--agent-nina-bg))",
+          },
+        },
+
+        /* Brand Extended */
+        brand: {
+          green: "hsl(var(--primary-500))",
+          "green-light": "hsl(var(--brand-green-light))",
+          blue: "hsl(var(--agent-mafalda))",
+          gold: "hsl(var(--brand-gold))",
+          cream: "hsl(var(--brand-cream))",
+        },
       },
 
       /* =======================================================================
          TYPOGRAPHY
          ======================================================================= */
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // Fonte oficial SemeIA: Montserrat
+        // Verificada em semeiaeducacao.ia.br (Fevereiro 2026)
+        sans: ["var(--font-montserrat)", "Montserrat", "system-ui", "-apple-system", "sans-serif"],
         mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
 
@@ -195,6 +248,23 @@ const config: Config = {
         "success-glow": "0 4px 14px 0 hsl(var(--success) / 0.25)",
         "warning-glow": "0 4px 14px 0 hsl(var(--warning) / 0.25)",
         "error-glow": "0 4px 14px 0 hsl(var(--destructive) / 0.25)",
+        // LP shadows
+        "brand-hover": "0 8px 25px -5px rgba(61, 139, 64, 0.4)",
+        "brand-card": "0 20px 40px -15px rgba(61, 139, 64, 0.2)",
+        "accent-hover": "0 8px 25px -5px rgba(232, 148, 26, 0.4)",
+        "card-dark": "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+      },
+
+      /* =======================================================================
+         BACKGROUND IMAGE - Gradientes
+         ======================================================================= */
+      backgroundImage: {
+        "gradient-brand": "linear-gradient(135deg, #5a9a5c 0%, #3d8b40 50%, #2e7d32 100%)",
+        "gradient-hero-glow": "radial-gradient(ellipse at center, rgba(61,139,64,0.15) 0%, transparent 70%)",
+        "gradient-divider": "linear-gradient(90deg, #3D8B40, #4ade80)",
+        "gradient-divider-accent": "linear-gradient(90deg, #E8941A, #fbbf24)",
+        "gradient-text": "linear-gradient(90deg, #fff 0%, #86efac 50%, #4ade80 100%)",
+        "gradient-radial-glow": "radial-gradient(circle, rgba(61,139,64,0.2) 0%, rgba(61,139,64,0.05) 40%, transparent 70%)",
       },
 
       /* =======================================================================

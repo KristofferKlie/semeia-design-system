@@ -9,3 +9,6 @@ export * from "./atoms";
 export * from "./molecules";
 export * from "./organisms";
 export * from "./templates";
+
+// Landing Page Components (Dark Mode)
+export * from "./lp";

@@ -1,4 +1,5 @@
-{/* Colors.mdx */}
+{/* Colors.mdx - SemeIA Design System */}
+{/* Fonte de verdade: https://semeiaeducacao.ia.br/ (Fevereiro 2026) */}
 
 import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
@@ -6,57 +7,82 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 # Paleta de Cores - SemeIA
 
-Nossa paleta de cores foi cuidadosamente projetada para contextos educacionais, promovendo foco, engajamento e motivação.
+Paleta de cores oficial extraída do site de produção `semeiaeducacao.ia.br`.
+O site opera em **dark mode** com fundos próximos ao preto e verde como cor de destaque principal.
 
-## Cores da Marca
+## Cores da Marca (Produção)
 
 <ColorPalette>
   <ColorItem
-    title="Primary - Azul Conhecimento"
-    subtitle="--primary-500"
+    title="Verde SemeIA - Cor Principal"
+    subtitle="brand-green — Botões, CTAs, ícones, hover states"
     colors={{
-      50: '#E8F4FD',
-      100: '#C5E4FA',
-      200: '#9ED0F5',
-      300: '#77BCF0',
-      400: '#50A8EB',
-      500: '#2196F3',
-      600: '#1976D2',
-      700: '#1565C0',
-      800: '#0D47A1',
-      900: '#0A3A8A',
+      main: '#3D8B40',
+      hover: '#357a38',
+      deep: '#2e7d32',
+      light: '#4ade80',
+      lighter: '#5a9a5c',
     }}
   />
   <ColorItem
-    title="Secondary - Verde Crescimento"
-    subtitle="--secondary-500"
+    title="Azul Petróleo SemeIA - Secondary"
+    subtitle="brand-blue — Cor de apoio, info"
     colors={{
-      50: '#E8F5E9',
-      100: '#C8E6C9',
-      200: '#A5D6A7',
-      300: '#81C784',
-      400: '#66BB6A',
-      500: '#4CAF50',
-      600: '#43A047',
-      700: '#388E3C',
-      800: '#2E7D32',
-      900: '#1B5E20',
+      main: '#2d4a5e',
+      light: '#5e8b9e',
     }}
   />
   <ColorItem
-    title="Accent - Laranja Energia"
-    subtitle="--accent-500"
+    title="Dourado SemeIA - Accent"
+    subtitle="brand-gold — Destaques especiais, warning"
     colors={{
-      50: '#FFF3E0',
-      100: '#FFE0B2',
-      200: '#FFCC80',
-      300: '#FFB74D',
-      400: '#FFA726',
-      500: '#FF9800',
-      600: '#FB8C00',
-      700: '#F57C00',
-      800: '#EF6C00',
-      900: '#E65100',
+      main: '#e9a83a',
+      amber: '#fbbf24',
+    }}
+  />
+</ColorPalette>
+
+## Fundos Dark Mode
+
+<ColorPalette>
+  <ColorItem
+    title="Backgrounds - Escala Dark"
+    subtitle="Fundos exclusivos do site — nunca usar fundos claros"
+    colors={{
+      primary: '#050505',
+      secondary: '#0f0f0f',
+      tertiary: '#1a1a1a',
+      card: '#171717',
+      'lp-primary': '#0A0A0A',
+      'lp-secondary': '#111111',
+    }}
+  />
+</ColorPalette>
+
+## Texto em Dark Mode
+
+<ColorPalette>
+  <ColorItem
+    title="Text Colors"
+    subtitle="Escala de texto para fundos escuros"
+    colors={{
+      white: '#FFFFFF',
+      secondary: '#A3A3A3',
+      tertiary: '#737373',
+      muted: '#525252',
+      subtle: '#D4D4D4',
+    }}
+  />
+</ColorPalette>
+
+## Bordas
+
+<ColorPalette>
+  <ColorItem
+    title="Border Colors"
+    subtitle="Bordas usadas em cards e separadores"
+    colors={{
+      subtle: '#262626',
     }}
   />
 </ColorPalette>
@@ -66,115 +92,142 @@ Nossa paleta de cores foi cuidadosamente projetada para contextos educacionais, 
 <ColorPalette>
   <ColorItem
     title="Success"
-    subtitle="Sucesso, progresso, conclusão"
+    subtitle="Verde — mesmo tom do brand"
     colors={{
+      main: '#3D8B40',
       light: '#E8F5E9',
-      main: '#4CAF50',
-      dark: '#2E7D32',
     }}
   />
   <ColorItem
     title="Warning"
-    subtitle="Atenção, cuidado"
+    subtitle="Dourado/Âmbar"
     colors={{
-      light: '#FFF8E1',
-      main: '#FFC107',
-      dark: '#F57F17',
+      main: '#E9A83A',
+      light: '#FEF7E6',
+      amber: '#fbbf24',
     }}
   />
   <ColorItem
     title="Error/Destructive"
-    subtitle="Erro, perigo, exclusão"
+    subtitle="Vermelho"
     colors={{
-      light: '#FFEBEE',
-      main: '#F44336',
-      dark: '#C62828',
+      main: '#C25550',
+      tailwind: '#EF4444',
+      light: '#FAEAE9',
     }}
   />
   <ColorItem
     title="Info"
-    subtitle="Informação, ajuda"
+    subtitle="Azul petróleo"
     colors={{
-      light: '#E3F2FD',
-      main: '#2196F3',
-      dark: '#1565C0',
+      main: '#2D4A5E',
+      light: '#E3EDF3',
     }}
   />
 </ColorPalette>
 
-## Cores Educacionais
-
-### Níveis de Dificuldade
+## Cores dos Agentes IA SemeIA
 
 <ColorPalette>
   <ColorItem
-    title="Iniciante"
-    subtitle="Conteúdo básico"
-    colors={{ beginner: '#81C784' }}
+    title="Leonardo"
+    subtitle="Agente Verde"
+    colors={{ main: '#3D8B40', bg: '#E8F5E9' }}
   />
   <ColorItem
-    title="Intermediário"
-    subtitle="Conteúdo moderado"
-    colors={{ intermediate: '#FFB74D' }}
+    title="Mafalda"
+    subtitle="Agente Azul Petróleo"
+    colors={{ main: '#2D4A5E', bg: '#E3EDF3' }}
   />
   <ColorItem
-    title="Avançado"
-    subtitle="Conteúdo complexo"
-    colors={{ advanced: '#EF5350' }}
+    title="Mário"
+    subtitle="Agente Dourado"
+    colors={{ main: '#E9A83A', bg: '#FEF7E6' }}
+  />
+  <ColorItem
+    title="Martha"
+    subtitle="Agente Azul Claro"
+    colors={{ main: '#5E8B9E', bg: '#E6F0F5' }}
+  />
+  <ColorItem
+    title="Bento"
+    subtitle="Agente Marrom/Terra"
+    colors={{ main: '#8B6B3D', bg: '#F5EFE6' }}
+  />
+  <ColorItem
+    title="Nina"
+    subtitle="Agente Rosa"
+    colors={{ main: '#9E5E6B', bg: '#F5E6E9' }}
   />
 </ColorPalette>
 
-### Tipos de Conteúdo
+## WhatsApp
 
 <ColorPalette>
   <ColorItem
-    title="Vídeo"
-    colors={{ video: '#F44336' }}
-  />
-  <ColorItem
-    title="Leitura"
-    colors={{ reading: '#2196F3' }}
-  />
-  <ColorItem
-    title="Exercício"
-    colors={{ exercise: '#FF9800' }}
-  />
-  <ColorItem
-    title="Quiz"
-    colors={{ quiz: '#9C27B0' }}
-  />
-  <ColorItem
-    title="Projeto"
-    colors={{ project: '#4CAF50' }}
+    title="WhatsApp"
+    subtitle="Botão flutuante — cor oficial WhatsApp"
+    colors={{ whatsapp: '#25D366' }}
   />
 </ColorPalette>
 
-### Gamificação
+## Regras de Uso
 
-<ColorPalette>
-  <ColorItem
-    title="XP - Experiência"
-    colors={{ xp: '#FFD700' }}
-  />
-  <ColorItem
-    title="Conquistas"
-    colors={{ badge: '#9C27B0' }}
-  />
-  <ColorItem
-    title="Streak"
-    colors={{ streak: '#FF5722' }}
-  />
-</ColorPalette>
+### Usar Verde (#3D8B40) em:
+- Botões primários (CTAs)
+- Links ativos na navegação
+- Ícones e containers de ícones
+- Bordas hover de cards
+- Números de estatísticas (usar #4ade80 — tom mais claro)
+- Divisores decorativos (gradiente #3D8B40 → #4ade80)
+- Focus ring
+
+### NÃO usar:
+- Fundo verde em seções inteiras — proibido (`lp-bg-brand` removido)
+- Laranja/dourado (#E8941A) em elementos principais — apenas accent especial
+- Fundos brancos ou claros — site é 100% dark mode
+- Azul como cor primária — é secondary/info apenas
+
+## Gradientes Oficiais
+
+```css
+/* Text gradient — verde */
+linear-gradient(135deg, #5a9a5c 0%, #3d8b40 50%, #2e7d32 100%)
+
+/* Hero text highlight */
+linear-gradient(90deg, #ffffff 0%, #86efac 50%, #4ade80 100%)
+
+/* Hero radial glow */
+radial-gradient(ellipse at center, rgba(61, 139, 64, 0.15) 0%, transparent 70%)
+
+/* Divider brand */
+linear-gradient(90deg, #3D8B40, #4ade80)
+
+/* Divider accent */
+linear-gradient(90deg, #E8941A, #fbbf24)
+```
 
 ## Uso no Código
 
 ```tsx
-// Usando classes Tailwind
-<div className="bg-primary text-primary-foreground">Primary</div>
-<div className="bg-success text-success-foreground">Success</div>
+// Botão primário
+<button className="lp-btn lp-btn-lg">Conheça nossas soluções</button>
 
-// Badges educacionais
-<Badge variant="beginner">Iniciante</Badge>
-<Badge variant="video">Vídeo</Badge>
-<Badge variant="xp">+50 XP</Badge>
+// Badge
+<span className="lp-badge">Inovação em Educação</span>
+
+// Card
+<div className="lp-card">...</div>
+
+// Texto com gradiente
+<span className="lp-text-gradient">educação com IA</span>
+
+// Stat number
+<p className="lp-stat-number">30+</p>
+
+// Via Tailwind direto
+<div className="bg-[#3D8B40] text-white">Primary button</div>
+<div className="bg-[#171717] border border-white/10">Card</div>
+<p className="text-[#A3A3A3]">Texto secundário</p>
+<p className="text-[#4ade80] font-bold">Número destaque</p>
 ```
