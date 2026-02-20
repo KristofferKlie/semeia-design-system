@@ -150,6 +150,7 @@ colors:
   # WHATSAPP
   # ---------------------------------------------------------------------------
   whatsapp: "#25D366"         # Verde WhatsApp oficial
+  whatsapp_number: "555181470945"  # SemeIA WhatsApp number (Brazil +55 51 8147-0945)
 
   # ---------------------------------------------------------------------------
   # GRADIENTS
@@ -682,6 +683,14 @@ animations:
       duration: "0.6s"
       timing: "ease-out"
       class: "lp-slide-up"
+
+  orbit:
+    description: "Rotating orbit rings for hero backgrounds"
+    ring_color: "rgba(61, 139, 64, 0.15)"
+    dot_primary: { color: "#3D8B40", glow: "0 0 10px #3D8B40", size: "6px" }
+    dot_accent: { color: "#E8941A", glow: "0 0 8px #E8941A", size: "4px" }
+    speeds: { slow: "40s", medium: "28s", fast: "20s" }
+    sizes: { outer: "700px", middle_inset: "80px", inner_inset: "160px" }
 
   transitions:
     fast: "150ms cubic-bezier(0.4, 0, 0.2, 1)"

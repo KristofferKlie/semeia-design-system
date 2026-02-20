@@ -22,11 +22,11 @@ export const LPStats = React.forwardRef<HTMLDivElement, LPStatsProps>(
     return (
       <div
         ref={ref}
-        className={cn("grid gap-8", colClasses[columns], className)}
+        className={cn("grid gap-4 md:gap-8", colClasses[columns], className)}
         {...props}
       >
         {stats.map((stat, index) => (
-          <div key={index} className="text-center p-6">
+          <div key={index} className="text-center p-3 md:p-6">
             <div className="lp-stat-number">{stat.value}</div>
             <div className="lp-stat-label mt-2">{stat.label}</div>
           </div>

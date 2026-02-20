@@ -496,15 +496,19 @@
      LP BASE - Container e Layout
      =========================================== */
   .lp-container {
-    @apply max-w-7xl mx-auto px-6;
+    @apply max-w-7xl mx-auto px-4 md:px-6;
   }
 
   .lp-section {
-    @apply py-24 px-6;
+    @apply py-12 md:py-24 px-4 md:px-6;
   }
 
   .lp-section-sm {
-    @apply py-16 px-6;
+    @apply py-10 md:py-16 px-4 md:px-6;
+  }
+
+  .lp-section-lg {
+    @apply py-16 md:py-32 px-4 md:px-6;
   }
 
   /* ===========================================
@@ -561,7 +565,7 @@
      LP HERO - Seção Principal
      =========================================== */
   .lp-hero {
-    @apply min-h-screen pt-20 flex items-center;
+    @apply min-h-[80vh] md:min-h-screen pt-20 pb-12 md:pb-0 flex items-center;
     background-color: #050505;
     position: relative;
     overflow: hidden;
@@ -596,15 +600,16 @@
   }
 
   .lp-h2 {
-    @apply font-display text-3xl md:text-4xl font-bold text-white;
+    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
+    color: #FFFFFF;
   }
 
   .lp-h3 {
-    @apply text-xl font-semibold text-white;
+    @apply text-lg md:text-xl font-semibold text-white;
   }
 
   .lp-text {
-    @apply text-lg md:text-xl;
+    @apply text-base md:text-lg lg:text-xl;
     color: #A3A3A3;
   }
 
@@ -651,7 +656,7 @@
 
   /* Botão Primário - Verde SemeIA */
   .lp-btn {
-    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200;
+    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 relative z-10;
     background-color: #3D8B40;
     color: white;
   }
@@ -670,7 +675,7 @@
 
   /* Tamanhos */
   .lp-btn-lg {
-    @apply px-10 py-4 text-lg;
+    @apply px-6 py-3 text-base md:px-10 md:py-4 md:text-lg;
   }
 
   .lp-btn-md {
@@ -683,7 +688,7 @@
 
   /* Botão Secundário - Outline */
   .lp-btn-outline {
-    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200;
+    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 relative z-10;
     background-color: transparent;
     color: #4ade80;
     border: 2px solid #3D8B40;
@@ -696,7 +701,7 @@
 
   /* Botão Accent - Laranja (para CTAs especiais) */
   .lp-btn-accent {
-    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200;
+    @apply inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 relative z-10;
     background-color: #E8941A;
     color: #1a1a1a;
   }
@@ -711,7 +716,7 @@
      LP CARDS - Cards e Containers
      =========================================== */
   .lp-card {
-    @apply rounded-xl p-8 transition-all duration-300;
+    @apply rounded-xl p-5 md:p-8 transition-all duration-300;
     background-color: #171717;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -771,7 +776,7 @@
      Cor: Verde (#4ade80) - padrão SemeIA dark mode
      =========================================== */
   .lp-stat-number {
-    @apply font-display text-4xl md:text-5xl font-bold;
+    @apply font-display text-2xl md:text-3xl lg:text-4xl font-bold leading-tight;
     color: #4ade80;
   }
 
@@ -876,6 +881,8 @@
     background-color: #171717;
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
+    min-height: 48px; /* WCAG touch target */
+    font-size: 16px; /* Prevents iOS zoom on focus */
   }
 
   .lp-input::placeholder {
@@ -908,7 +915,7 @@
   }
 
   .lp-faq-button {
-    @apply w-full flex items-center justify-between p-6 text-left transition-colors duration-200;
+    @apply w-full flex items-center justify-between p-4 md:p-6 text-left transition-colors duration-200 text-sm md:text-base;
     color: white;
   }
 
@@ -917,7 +924,7 @@
   }
 
   .lp-faq-content {
-    @apply px-6 pb-6;
+    @apply px-4 pb-4 md:px-6 md:pb-6 text-sm md:text-base;
     color: #A3A3A3;
   }
 
@@ -1029,6 +1036,64 @@
     background: radial-gradient(ellipse at center, rgba(45, 74, 94, 0.15) 0%, transparent 70%);
   }
 
+  /* Orbit rings — rotating decorative circles for hero backgrounds */
+  @keyframes lp-rotateOrbit {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .lp-orbit-wrap {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .lp-orbit {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(61, 139, 64, 0.15);
+    border-radius: 50%;
+    animation: lp-rotateOrbit 40s linear infinite;
+  }
+
+  .lp-orbit-2 {
+    inset: 80px;
+    animation: lp-rotateOrbit 28s linear infinite reverse;
+  }
+
+  .lp-orbit-3 {
+    inset: 160px;
+    animation: lp-rotateOrbit 20s linear infinite;
+  }
+
+  .lp-orbit-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3D8B40;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #3D8B40;
+  }
+
+  .lp-orbit-dot-accent {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #E8941A;
+    bottom: -2px;
+    right: 20%;
+    box-shadow: 0 0 8px #E8941A;
+  }
+
   /* Scroll reveal — elements that animate into view */
   .lp-reveal {
     opacity: 0;
@@ -1081,6 +1146,24 @@
   .lp-delay-4 { transition-delay: 400ms; }
   .lp-delay-5 { transition-delay: 500ms; }
   .lp-delay-6 { transition-delay: 600ms; }
+
+  /* Reduced motion — respect user preference (WCAG 2.1 SC 2.3.3) */
+  @media (prefers-reduced-motion: reduce) {
+    .lp-reveal,
+    .lp-reveal-left,
+    .lp-reveal-right,
+    .lp-reveal-scale {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .lp-orbit,
+    .lp-orbit-2,
+    .lp-orbit-3 {
+      animation: none !important;
+    }
+  }
 
   /* ===========================================
      LP ANIMATIONS

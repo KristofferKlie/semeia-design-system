@@ -44,10 +44,15 @@ export const LPHero = React.forwardRef<HTMLElement, LPHeroProps>(
                     <span className="lp-badge">{badge}</span>
                   </div>
                 )}
-                <h1 className="lp-h1 mb-6">{title}</h1>
-                {subtitle && <p className="lp-text mb-8 max-w-2xl">{subtitle}</p>}
+                <h1 className={cn("lp-h1 mb-6", centered && "max-w-3xl")}>{title}</h1>
+                {subtitle && (
+                  <p className={cn("lp-text mb-8 max-w-2xl", centered && "mx-auto")}>{subtitle}</p>
+                )}
                 {(cta || secondaryCta) && (
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className={cn(
+                    "flex flex-col sm:flex-row gap-4",
+                    centered && "justify-center"
+                  )}>
                     {cta}
                     {secondaryCta}
                   </div>

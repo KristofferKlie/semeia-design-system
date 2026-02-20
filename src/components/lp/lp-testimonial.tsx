@@ -20,7 +20,7 @@ export const LPTestimonial = React.forwardRef<HTMLDivElement, LPTestimonialProps
           >
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10H0z" />
           </svg>
-          <p className="text-lg text-neutral-300 leading-relaxed">{quote}</p>
+          <p className="text-base md:text-lg text-neutral-300 leading-relaxed">{quote}</p>
           <div className="flex items-center gap-3 mt-2">
             {avatar}
             <div>

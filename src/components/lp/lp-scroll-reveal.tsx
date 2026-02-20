@@ -45,9 +45,16 @@ export const LPScrollReveal = React.forwardRef<HTMLDivElement, LPScrollRevealPro
     ref
   ) => {
     const innerRef = React.useRef<HTMLDivElement>(null);
-    const [revealed, setRevealed] = React.useState(false);
+    const prefersReducedMotion = typeof window !== "undefined"
+      && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const [revealed, setRevealed] = React.useState(prefersReducedMotion);
 
     React.useEffect(() => {
+      if (prefersReducedMotion) {
+        setRevealed(true);
+        return;
+      }
+
       const el = innerRef.current;
       if (!el) return;
 

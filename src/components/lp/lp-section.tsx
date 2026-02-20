@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface LPSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "primary" | "secondary" | "tertiary" | "card";
-  size?: "default" | "sm";
+  size?: "default" | "sm" | "lg";
   container?: boolean;
   /** Enable light mode for this section and all children */
   light?: boolean;
@@ -34,7 +34,7 @@ export const LPSection = React.forwardRef<HTMLDivElement, LPSectionProps>(
         ref={ref as React.Ref<HTMLElement>}
         className={cn(
           bgMap[variant],
-          size === "default" ? "lp-section" : "lp-section-sm",
+          size === "lg" ? "lp-section-lg" : size === "default" ? "lp-section" : "lp-section-sm",
           light && "lp-light",
           className
         )}
