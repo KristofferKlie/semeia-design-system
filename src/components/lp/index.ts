@@ -45,3 +45,9 @@ export type { LPDividerProps } from "./lp-divider";
 
 export { LPInput, LPTextarea } from "./lp-input";
 export type { LPInputProps, LPTextareaProps } from "./lp-input";
+
+export { LPScrollReveal } from "./lp-scroll-reveal";
+export type { LPScrollRevealProps } from "./lp-scroll-reveal";
+
+export { LPGrain } from "./lp-grain";
+export type { LPGrainProps } from "./lp-grain";

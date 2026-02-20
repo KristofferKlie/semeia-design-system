@@ -2,13 +2,14 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface LPBadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "brand" | "accent" | "white";
+  variant?: "brand" | "accent" | "white" | "secondary";
 }
 
 const variantClasses = {
   brand: "lp-badge",
   accent: "lp-badge-accent",
   white: "lp-badge-white",
+  secondary: "lp-badge-secondary",
 };
 
 export const LPBadge = React.forwardRef<HTMLSpanElement, LPBadgeProps>(

@@ -201,10 +201,13 @@ const config: Config = {
          TYPOGRAPHY
          ======================================================================= */
       fontFamily: {
-        // Fonte oficial SemeIA: Montserrat
-        // Verificada em semeiaeducacao.ia.br (Fevereiro 2026)
+        // SemeIA 3-Font Hierarchy
+        // Sans (body/UI): Montserrat
         sans: ["var(--font-montserrat)", "Montserrat", "system-ui", "-apple-system", "sans-serif"],
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
+        // Display (headings): Fraunces — organic serif with optical sizing
+        display: ["var(--font-fraunces)", "Fraunces", "Georgia", "serif"],
+        // Mono (labels/code/data): DM Mono
+        mono: ["var(--font-dm-mono)", "DM Mono", "JetBrains Mono", "Fira Code", "monospace"],
       },
 
       fontSize: {
@@ -346,6 +349,16 @@ const config: Config = {
         "22": "5.5rem",
         "26": "6.5rem",
         "30": "7.5rem",
+        // Semantic spacing tokens (base unit: 4px)
+        "space-xs": "var(--space-xs)",         // 4px
+        "space-sm": "var(--space-sm)",         // 8px
+        "space-md": "var(--space-md)",         // 16px
+        "space-lg": "var(--space-lg)",         // 24px
+        "space-xl": "var(--space-xl)",         // 32px
+        "space-2xl": "var(--space-2xl)",       // 48px
+        "space-3xl": "var(--space-3xl)",       // 64px
+        "space-section": "var(--space-section)", // 96px
+        "space-hero": "var(--space-hero)",     // 80px
       },
     },
   },

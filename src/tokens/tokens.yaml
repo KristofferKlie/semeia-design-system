@@ -5,13 +5,13 @@
 
 metadata:
   name: SemeIA Design System
-  version: 3.0.0
+  version: 4.0.0
   description: Design tokens para plataforma educacional SemeIA
   brand: SemeIA Educação
   updated_at: 2026-02-20
   source_url: https://semeiaeducacao.ia.br/
   mode: dark  # Site principal é dark mode
-  font: Montserrat
+  fonts: [Fraunces, Montserrat, DM Mono]
 
 # =============================================================================
 # COLORS - Paleta de cores oficial SemeIA
@@ -187,13 +187,19 @@ colors:
 # TYPOGRAPHY - Sistema tipográfico oficial
 # =============================================================================
 typography:
+  # 3-Font Hierarchy: Display + Sans + Mono
   fonts:
-    primary: "Montserrat, system-ui, -apple-system, sans-serif"
-    fallback: "Montserrat Fallback"  # Arial com ajustes métricos
-    # Fallback metrics:
-    #   ascent-override: 85.79%
-    #   descent-override: 22.25%
-    #   size-adjust: 112.83%
+    display: "Fraunces, Georgia, serif"
+    sans: "Montserrat, system-ui, -apple-system, sans-serif"
+    mono: "DM Mono, JetBrains Mono, Fira Code, monospace"
+    # Usage rules:
+    #   Display (Fraunces): H1, H2, stat numbers — creates premium feel
+    #   Sans (Montserrat): H3-H6, body, buttons, UI elements
+    #   Mono (DM Mono): eyebrow labels, badges, data values, code
+    css_variables:
+      display: "var(--font-fraunces)"
+      sans: "var(--font-montserrat)"
+      mono: "var(--font-dm-mono)"
 
   # Font Weights disponíveis no @font-face
   weights:
@@ -219,20 +225,23 @@ typography:
   # Heading hierarchy (Landing Page dark mode)
   headings:
     h1:
-      classes: "text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+      classes: "font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+      font: display  # Fraunces
       sizes: { mobile: "2.25rem", tablet: "3rem", desktop: "3.75rem" }
       weight: 700
       color: "#FFFFFF"
       line_height: 1.25
 
     h2:
-      classes: "text-3xl md:text-4xl font-bold text-white"
+      classes: "font-display text-3xl md:text-4xl font-bold text-white"
+      font: display  # Fraunces
       sizes: { mobile: "1.875rem", desktop: "2.25rem" }
       weight: 700
       color: "#FFFFFF"
 
     h3:
       classes: "text-xl font-semibold text-white"
+      font: sans  # Montserrat
       size: "1.25rem"
       weight: 600
       color: "#FFFFFF"
@@ -257,15 +266,28 @@ typography:
   # Special text styles
   special:
     badge:
-      classes: "text-sm font-semibold uppercase tracking-wider"
+      classes: "font-mono text-xs uppercase tracking-wider"
+      font: mono  # DM Mono
       letter_spacing: "0.05em"
+
+    eyebrow:
+      classes: "font-mono text-xs uppercase tracking-[0.2em] font-medium"
+      font: mono  # DM Mono
+      color: "#4ade80"
+      description: "Section labels above headings"
 
     nav_link:
       classes: "text-sm font-medium text-white hover:text-brand-500"
 
     stat_number:
-      classes: "text-4xl md:text-5xl font-bold"
+      classes: "font-display text-4xl md:text-5xl font-bold"
+      font: display  # Fraunces
       color: "#4ade80"
+
+    data_value:
+      classes: "font-mono"
+      font: mono  # DM Mono
+      description: "Numeric data, prices, metrics"
 
   # Letter spacing
   letter_spacing:
@@ -283,11 +305,27 @@ typography:
 # SPACING - Sistema de espaçamento
 # =============================================================================
 spacing:
+  # Base unit: 4px (0.25rem) — all spacing derives from this
+  base_unit: "4px"
+  base_rem: "0.25rem"
+
+  # Semantic scale — use these, not raw Tailwind values
+  semantic:
+    xs:      { rem: "0.25rem", px: "4px",  use: "Tight inline gaps" }
+    sm:      { rem: "0.5rem",  px: "8px",  use: "Between related elements" }
+    md:      { rem: "1rem",    px: "16px", use: "Between components" }
+    lg:      { rem: "1.5rem",  px: "24px", use: "Between groups" }
+    xl:      { rem: "2rem",    px: "32px", use: "Between section content" }
+    2xl:     { rem: "3rem",    px: "48px", use: "Major divisions" }
+    3xl:     { rem: "4rem",    px: "64px", use: "Section padding small" }
+    section: { rem: "6rem",    px: "96px", use: "Section padding default" }
+    hero:    { rem: "5rem",    px: "80px", use: "Hero top offset (header height)" }
+
   # Seções
   section:
-    padding_y: "6rem"      # py-24 = 96px
+    padding_y: "6rem"      # py-24 = 96px = --space-section
     padding_x: "1.5rem"    # px-6 = 24px
-    padding_y_sm: "4rem"   # py-16 = 64px
+    padding_y_sm: "4rem"   # py-16 = 64px = --space-3xl
 
   # Container
   container:
@@ -684,28 +722,29 @@ layout:
 # VISUAL IDENTITY - Resumo da identidade visual
 # =============================================================================
 visual_identity:
-  mode: "dark"
-  aesthetic: "Minimalista escuro premium com accent verde"
+  mode: "dark (primary), light (available via lp-light)"
+  aesthetic: "Premium dark com tipografia orgânica e texturas"
   description: >
-    Site dark mode com fundos próximos ao preto (#050505 a #1a1a1a).
-    Texto principal branco, texto secundário cinza neutro (#A3A3A3).
-    Cor de destaque: Verde SemeIA (#3D8B40) para botões, CTAs, ícones, números.
-    Verde claro (#4ade80) para números de estatísticas e textos de destaque.
-    Glassmorphism no header (backdrop-filter: blur).
-    Cards com borda sutil rgba(255,255,255,0.1) que acende em verde no hover.
-    Glow radial verde no hero como elemento de profundidade.
-    Fonte: Montserrat em todos os pesos.
+    Dark mode com fundos próximos ao preto (#050505 a #1a1a1a).
+    3 fontes: Fraunces (display/headings), Montserrat (body/UI), DM Mono (labels/data).
+    Grain overlay e radial glow para profundidade visual.
+    Cards com accent border-top colorido para diferenciação.
+    Light mode disponível via classe lp-light (fundo creme #F7F5F0).
 
   do:
-    - "Usar verde (#3D8B40) em botões primários, links ativos, ícones, bordas hover"
-    - "Usar verde claro (#4ade80) em números de estatísticas e texto de destaque"
-    - "Usar fundos escuros (#050505, #0f0f0f, #1a1a1a) para backgrounds"
-    - "Usar borda rgba(255,255,255,0.1) para cards em dark mode"
+    - "Fraunces (font-display) para H1 e H2 — cria hierarquia premium"
+    - "DM Mono (font-mono) para eyebrow labels e badges — tracking wide"
+    - "Montserrat (font-sans) para body, buttons, H3+ — clean e legível"
+    - "Verde (#3D8B40) em botões primários, links, ícones, bordas hover"
+    - "Grain (.lp-grain) em seções hero e backgrounds grandes"
+    - "Accent border-top em cards para diferenciá-los (.lp-card-accent-*)"
+    - "ScrollReveal (.lp-reveal) para elementos que entram na viewport"
     - "Glassmorphism no header fixo"
-    - "Radial glow verde no hero"
+    - "Radial glow verde no hero (.lp-glow)"
 
   dont:
-    - "NÃO usar laranja (#E8941A) em elementos principais - apenas accent especial"
+    - "NÃO usar Montserrat em H1/H2 — sempre Fraunces"
+    - "NÃO usar laranja (#E8941A) em elementos principais - apenas accent"
     - "NÃO usar fundo verde em seções inteiras (lp-bg-brand PROIBIDO)"
     - "NÃO usar azul como cor primária (é secondary/info)"
-    - "NÃO usar fundos brancos ou claros - site é 100% dark mode"
+    - "NÃO fazer cards todos da mesma cor — usar accent system"

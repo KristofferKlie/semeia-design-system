@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Fraunces, DM_Mono } from "next/font/google";
 import "@/styles/globals.css";
 
-// Fonte oficial SemeIA: Montserrat
-// Fonte verificada em https://semeiaeducacao.ia.br/ (Fevereiro 2026)
+// SemeIA Typography System (3-font hierarchy)
+// Sans (body/UI): Montserrat — verified from semeiaeducacao.ia.br
+// Display (headings): Fraunces — organic serif, matches "growth/seed" brand
+// Mono (labels/code): DM Mono — clean monospace for eyebrow labels & data
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  variable: "--font-dm-mono",
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${montserrat.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} ${fraunces.variable} ${dmMono.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
